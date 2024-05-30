@@ -9,5 +9,15 @@ export const productsApi = createApi({
     }),
   }),
 });
+export const categoriesApi = createApi({
+  reducerPath: "categories",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
+  endpoints: (builder) => ({
+    getCategories: builder.query({
+      query: () => "/products/categories",
+    }),
+  }),
+});
 
 export const { useGetProductsQuery } = productsApi;
+export const { useGetCategoriesQuery } = categoriesApi;
