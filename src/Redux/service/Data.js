@@ -18,6 +18,16 @@ export const categoriesApi = createApi({
     }),
   }),
 });
+export const recipesApi = createApi({
+  reducerPath: "recipes",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
+  endpoints: (builder) => ({
+    getRecipes: builder.query({
+      query: () => "/recipes/meal-type/snack",
+    }),
+  }),
+});
 
 export const { useGetProductsQuery } = productsApi;
 export const { useGetCategoriesQuery } = categoriesApi;
+export const { useGetRecipesQuery } = recipesApi;
