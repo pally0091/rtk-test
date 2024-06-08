@@ -23,7 +23,7 @@ export const recipesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
   endpoints: (builder) => ({
     getRecipes: builder.query({
-      query: () => "/recipes/meal-type/snack",
+      query: (tag) => `/recipes/tag/${tag}`,
     }),
   }),
 });

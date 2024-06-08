@@ -1,7 +1,8 @@
 import { useGetRecipesQuery } from "../Redux/service/Data";
 
 const AllRecipe = () => {
-  const res = useGetRecipesQuery();
+  const tag = "Asian";
+  const res = useGetRecipesQuery(tag);
   const { data, isError, isLoading, error } = res;
 
   if (isLoading) {
@@ -12,7 +13,9 @@ const AllRecipe = () => {
   }
   return (
     <div>
-      <p>All Recipes</p>
+      <p>
+        All Recipes from <b>{tag}</b>
+      </p>
       {data.recipes.map((rec, index) => (
         <p key={index}>{rec.name}</p>
       ))}
