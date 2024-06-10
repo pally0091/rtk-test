@@ -1,8 +1,7 @@
 import { useGetCategoriesQuery } from "../Redux/service/Data";
 
 const AllCategories = () => {
-  const res = useGetCategoriesQuery();
-  const { data, error, isLoading } = res;
+  const { data, error, isLoading } = useGetCategoriesQuery();
   //   console.log(data);
   if (isLoading) {
     return <div>Loading...</div>;

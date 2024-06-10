@@ -2,8 +2,7 @@ import { useGetRecipesQuery } from "../Redux/service/Data";
 
 const AllRecipe = () => {
   const tag = "Asian";
-  const res = useGetRecipesQuery(tag);
-  const { data, isError, isLoading, error } = res;
+  const { data, isError, isLoading, error } = useGetRecipesQuery(tag);
 
   if (isLoading) {
     return <div>Loading...</div>;

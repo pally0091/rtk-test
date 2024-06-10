@@ -1,8 +1,7 @@
 import { useGetProductsQuery } from "../Redux/service/Data";
 
 const AllProducts = () => {
-  const res = useGetProductsQuery();
-  const { data, error, isLoading } = res;
+  const { data, error, isLoading } = useGetProductsQuery();
   //   console.log(data, error, isLoading);
 
   return (
