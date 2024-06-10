@@ -1,14 +1,14 @@
 import { useGetProductsQuery } from "../Redux/service/Data";
 
 const AllProducts = () => {
-  const { data, error, isLoading } = useGetProductsQuery();
+  const { data, error, isLoading, isError } = useGetProductsQuery();
   //   console.log(data, error, isLoading);
 
   return (
     <div>
       {isLoading ? (
         <h5>Loading...</h5>
-      ) : error ? (
+      ) : isError ? (
         <h5>Error: {error.message}</h5>
       ) : (
         <>
